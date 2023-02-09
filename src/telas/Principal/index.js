@@ -8,12 +8,16 @@ import { useContext } from 'react';
 import { Feather } from 'react-native-vector-icons'
 import { produtos } from './produtos';
 import MaterialCommunityIcons from 'react-native-vector-icons/Feather';
+import { useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalContext';
 
 export default function Principal({navigation}) {
   const {
     quantidade,
     ultimosVistos,
   } = useContext(ProdutosContext);
+
+  const { valor, nome } = useContext(GlobalContext)
 
   const {
     temas,
@@ -29,7 +33,7 @@ export default function Principal({navigation}) {
     <View style={estilo.container}>
       <StatusBar />
       <View style={estilo.tituloArea}>
-        <Text style={estilo.titulo}>Olá, {usuario.nome}</Text>
+        <Text style={estilo.titulo}>Olá, {nome}</Text>
         <View style={estilo.carrinhoArea}>
           <TouchableOpacity onPress={() => navigation.navigate('Resumo')}>
             <Feather name="shopping-cart" size={30} color="#fff" style={estilo.carrinhoIcon} />
