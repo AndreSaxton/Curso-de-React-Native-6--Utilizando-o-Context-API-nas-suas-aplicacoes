@@ -7,7 +7,7 @@ export default function Configuracao({ navigation }) {
   const {
     temas,
     tema,
-    setTemaAtual,
+    setTemaAtual
   } = useContext(TemaContext);
 
   const estilo = estilos(temas);
