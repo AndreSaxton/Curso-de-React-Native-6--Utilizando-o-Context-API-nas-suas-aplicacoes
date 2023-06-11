@@ -1,7 +1,7 @@
 import { Text, View, FlatList, StatusBar, TouchableOpacity } from 'react-native';
 import { Produto } from '../../componentes/Produto';
 import { ProdutosContext } from '../../contexts/ProdutosContext';
-import { AutenticacaoContext } from '../../contexts/AutenticacaoContext';
+import { AutenticacaoContext } from '../../context/AutenticacaoContext';
 import { TemaContext } from '../../contexts/TemaContext';
 import { estilos } from './estilos';
 import { useContext } from 'react';
@@ -29,7 +29,7 @@ export default function Principal({navigation}) {
     <View style={estilo.container}>
       <StatusBar />
       <View style={estilo.tituloArea}>
-        <Text style={estilo.titulo}>Olá, NOME</Text>
+        <Text style={estilo.titulo}>Olá, {usuario?.nome}</Text>
         <View style={estilo.carrinhoArea}>
           <TouchableOpacity onPress={() => navigation.navigate('Resumo')}>
             <Feather name="shopping-cart" size={30} color="#fff" style={estilo.carrinhoIcon} />

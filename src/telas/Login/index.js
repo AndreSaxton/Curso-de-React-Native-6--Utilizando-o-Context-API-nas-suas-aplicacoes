@@ -1,30 +1,34 @@
 import { useContext, useState } from "react";
-import { Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native';
-import { AutenticacaoContext } from "../../contexts/AutenticacaoContext";
+import { Text, View, TextInput, TouchableOpacity, StatusBar, Alert } from 'react-native';
 import { TemaContext } from "../../contexts/TemaContext";
 import { estilos } from './estilos';
+import { AutenticacaoContext } from "../../context/AutenticacaoContext";
+
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const { loginAuth, } = useContext(AutenticacaoContext);
 
   const {
     temas,
   } = useContext(TemaContext);
-
   const estilo = estilos(temas);
 
-  async function logandoNoSistema(){
-    // const resultado = await loginAuth(email, senha);
-    const resultado = 'ok';
+  const { login } = useContext(AutenticacaoContext);
 
-    if(resultado === 'ok'){
+
+  async function logandoNoSistema(){
+    const resultado = await login(email, senha);
+    // const resultado = 'ok';
+    console.log(resultado);
+    
+    if(resultado == 'ok'){
       navigation.navigate('Principal');
     }
     else{
       alert(resultado);
+      // Alert.alert(resultado);
     }
   }
 
