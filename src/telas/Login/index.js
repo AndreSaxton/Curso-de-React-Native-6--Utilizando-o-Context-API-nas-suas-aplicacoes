@@ -3,18 +3,12 @@ import { Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native
 import { AutenticacaoContext } from "../../contexts/AutenticacaoContext";
 import { TemaContext } from "../../contexts/TemaContext";
 import { estilos } from './estilos';
-import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const { valor, nome, setNome } = useContext(GlobalContext)
-
-  const {
-    login,
-  } = useContext(AutenticacaoContext);
+  const { loginAuth, } = useContext(AutenticacaoContext);
 
   const {
     temas,
@@ -23,7 +17,9 @@ export default function Login({ navigation }) {
   const estilo = estilos(temas);
 
   async function logandoNoSistema(){
-    const resultado = await login(email, senha);
+    // const resultado = await loginAuth(email, senha);
+    const resultado = 'ok';
+
     if(resultado === 'ok'){
       navigation.navigate('Principal');
     }
@@ -36,7 +32,7 @@ export default function Login({ navigation }) {
     <View style={estilo.container}>
       <StatusBar />
 
-      <Text style={estilo.titulo}>Login = {valor}</Text>
+      <Text style={estilo.titulo}>Login</Text>
 
       <View style={estilo.inputArea}>
         <TextInput
@@ -44,8 +40,8 @@ export default function Login({ navigation }) {
           placeholder="Email"
           placeholderTextColor="#999"
           autoCapitalize="none"
-          value={nome}
-          onChangeText={setNome}
+          value={email}
+          onChangeText={setEmail}
         />
         <TextInput
           style={estilo.input}
