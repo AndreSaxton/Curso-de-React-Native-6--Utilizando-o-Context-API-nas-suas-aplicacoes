@@ -61,7 +61,14 @@ export const estilos = (tema) => {
     fontWeight: 'bold',
     color: "#fff",
   },
-  botao: {
+  iconArea: {
+    marginLeft: 16,
+  },
+  icon: {
+    color: tema.texto,
+    fontSize: 30,
+  },
+  botao:{
     margin: 16,
     marginBottom: 32,
     paddingVertical: 16,
@@ -74,5 +81,6 @@ export const estilos = (tema) => {
     color: tema.preto,
     textAlign: 'center',
   },
+
 })
 }
