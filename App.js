@@ -1,12 +1,15 @@
 import { TemaProvider } from "./src/contexts/TemaContext";
 import Rotas from "./src/rotas";
 import { AutenticacaoProvider } from "./src/context/AutenticacaoContext";
+import { ProdutosProvider } from "./src/context/ProdutosContext";
 
 export default function App() {
   return (
     <TemaProvider>
       <AutenticacaoProvider>
-        <Rotas />
+        <ProdutosProvider>
+          <Rotas />
+        </ProdutosProvider>
       </AutenticacaoProvider>
     </TemaProvider>
   );

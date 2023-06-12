@@ -20,8 +20,6 @@ export default function Login({ navigation }) {
 
   async function logandoNoSistema(){
     const resultado = await login(email, senha);
-    // const resultado = 'ok';
-    console.log(resultado);
     
     if(resultado == 'ok'){
       navigation.navigate('Principal');

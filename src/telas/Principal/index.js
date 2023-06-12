@@ -1,6 +1,6 @@
 import { Text, View, FlatList, StatusBar, TouchableOpacity } from 'react-native';
 import { Produto } from '../../componentes/Produto';
-import { ProdutosContext } from '../../contexts/ProdutosContext';
+import { ProdutosContext } from '../../context/ProdutosContext';
 import { AutenticacaoContext } from '../../context/AutenticacaoContext';
 import { TemaContext } from '../../contexts/TemaContext';
 import { estilos } from './estilos';

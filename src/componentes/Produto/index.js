@@ -1,6 +1,6 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useContext } from 'react';
-import { ProdutosContext } from '../../contexts/ProdutosContext';
+import { ProdutosContext } from '../../context/ProdutosContext';
 import { estilos } from './estilos'
 
 export function Produto({item, visualizado}) {
