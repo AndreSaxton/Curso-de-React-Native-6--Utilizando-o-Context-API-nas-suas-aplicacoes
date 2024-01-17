@@ -1,2 +1,9 @@
+para iniciar a aplicação usar:
+cd C:\Users\User\Desktop\React Native - Utilizando o Context API nas suas aplicacoes
+npm start
+w
+
 para iniciar db server usar o comando abaixo na pasta da aplicação.
 json-server --watch --host 10.0.2.15 db.json 
+
+para ver no navegar usar o endereço http://10.0.2.15:3000/produtos
