@@ -1,0 +1,2 @@
+para iniciar db server usar o comando abaixo na pasta da aplicação.
+json-server --watch --host 10.0.2.15 db.json 
