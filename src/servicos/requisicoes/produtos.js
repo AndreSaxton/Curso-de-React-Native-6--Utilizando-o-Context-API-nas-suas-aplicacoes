@@ -23,8 +23,9 @@ export async function salvarProduto(produto){
 }
 
 export async function removerProduto(produto){
+    const comandoDelete = '/produtos/' + produto.id;
     try {
-        await api.delete('/produtos/${produto.id}');
+        await api.delete(comandoDelete);
         return 'sucesso'
     }
     catch (error){

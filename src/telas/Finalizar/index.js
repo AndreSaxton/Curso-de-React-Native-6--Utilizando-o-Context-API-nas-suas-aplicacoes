@@ -12,6 +12,8 @@ export default function Finalizar({navigation}) {
   const {
     quantidade,
     carrinho,
+    precoTotal,
+    finalizarCompra,
   } = useContext(ProdutosContext);
 
   const {
@@ -24,12 +26,33 @@ export default function Finalizar({navigation}) {
 
   const estilo = estilos(temas);
 
+  async function finalizar() {
+    const resultado = await finalizarCompra();
+    console.log(resultado);
+    // Alert.alert(resultado);
+    alert(resultado);
+    navigation.navigate('Principal');
+  }
+
   return (
     <View style={estilo.container}>
       <StatusBar />
 
+      <View style={estilo.enderecoArea}>
+        <Text style={estilo.titulo}>Informações de entrega</Text>
+        <Text style={estilo.texto}>Nome: {usuario?.nome}</Text>
+        <Text style={estilo.texto}>Endereço: {usuario?.endereco}</Text>
+        <Text style={estilo.texto}>Email: {usuario?.email}</Text>
+        <Text style={estilo.texto}>Telefone: {usuario?.telefone}</Text>
+      </View>
+
+      <View style={estilo.resumoArea}>
+        <Text style={estilo.texto}>Quantidade: {quantidade}</Text>
+        <Text style={estilo.texto}>Preço Total: R$ {precoTotal}</Text>
+      </View>
+
       <TouchableOpacity style={estilo.botao}
-        onPress={() => navigation.navigate('Principal')}
+        onPress={() => finalizar()}
       >
         <Text style={estilo.botaoTexto}>Finalizar</Text>
       </TouchableOpacity>
