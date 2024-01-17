@@ -24,12 +24,18 @@ export function TemaProvider({ children }) {
         setTema(tema);
     }
 
+    async function salvarTemaNoDispositivo(tema){
+        await AsyncStorage.setItem('@tema', tema);
+        setTema(tema);
+    }
+
     return (
         <TemaContext.Provider
             value={{
                 tema,
                 temas: temas[tema],
                 setTemaAtual,
+                salvarTemaNoDispositivo
             }}
         >
             {children}
